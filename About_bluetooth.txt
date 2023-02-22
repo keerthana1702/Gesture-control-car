@@ -1,0 +1,38 @@
+bluetooth to bluetooth communication vth Serial data
+
+--------------------------------
+* intialy baud rate is 38500 to check the commands in hercules
+
+* components required -- 2 bluetooth ,USB to ttl or arduino
+
+--------------------------------
+
+* we have to make one bluetooth as master and another one slave
+
+* to set the configure mode in bluetooth press and hold the reset button  with 5V_pin replace to EN -m pin nd wait for a while and keep back as it is to 5v_pin 
+--------------------------------
+
+*Master configuration
+
+	-- " AT "
+	-- " AT+UART?"
+	-- " AT+ROLE?" AND "AT+ROLE = 1"
+	-- " AT+CMODE=0"
+	-- " AT+BIND=19,31,8E028"
+
+*Slave configuration 
+
+	-- " AT "
+	-- " AT+UART?"
+	-- " AT+ROLE?" AND "AT+ROLE = 0"
+	-- " AT+ADDR?"  -- write down the address
+
+---------------------------------
+
+*both the bluetooth device have same baud rate
+
+* connect to the bluetooth device to the arduino and start programming
+
+* what ever the values passed by master it will received by the salve and according to that vlaue it operates.   
+
+---------------------------------
